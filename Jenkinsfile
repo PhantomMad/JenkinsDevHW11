@@ -9,7 +9,6 @@ pipeline {
       stage('Get content'){
         steps {
           git 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
-          sh 'ls -la /docker/hw11/git'
         }
       }
       stage('Build project'){
@@ -19,8 +18,8 @@ pipeline {
       }
       stage('Copy and run'){
        steps {
-        sh 'mkdir /docker/hw11/project/'
-        sh 'mv target/*.*ar project/'
+        sh 'mkdir /docker/hw11/project'
+        sh 'mv target/*.*ar /docker/hw11/project/'
        }
       }
     }
