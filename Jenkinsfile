@@ -8,8 +8,8 @@ pipeline {
     stages {
       stage('Get content'){
         steps {
-          sh 'cd /docker/hw11/git'
           git 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+          sh 'ls -la /docker/hw11/git'
         }
       }
     }
