@@ -10,4 +10,6 @@ RUN tar xpvf tomcat.tar.gz -C /opt/tomcat --strip-components=1
 ENV CATALINA_PID=/opt/tomcat/temp/tomcat.pid
 ENV CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
 #
+EXPOSE 8080
+#
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
