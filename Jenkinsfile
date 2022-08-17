@@ -9,7 +9,7 @@ pipeline {
       stage('Get content'){
         steps {
           git 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
-          sh 'mv ./*.*ar git/'
+          sh 'mv /docker/hw11/*.*ar /docker/hw11/git/'
         //  sh 'ssh-keyscan -H 10.115.10.120 >> ~/.ssh/known_hosts'
         }
       }
