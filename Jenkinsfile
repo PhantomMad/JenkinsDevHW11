@@ -2,7 +2,6 @@ pipeline {
     agent {
       docker {
         image '10.115.10.120:8082/alpine:hw11_build'
-        sh 'ssh-keyscan -H 10.115.10.120 >> ~/.ssh/known_hosts'
       }
     }
     stages {
@@ -10,6 +9,7 @@ pipeline {
         steps {
           sh 'wget -O tomcat.tar.gz https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz'
           git 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+          sh 'ssh-keyscan -H 10.115.10.120 >> ~/.ssh/known_hosts'
           sh 'scp devopsadmin@10.115.10.120:/var/lib/docker/jenkins/workspace/HW11/tomcat.tar.gz /docker/hw11/tomcat'
         }
       }
