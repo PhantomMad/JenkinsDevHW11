@@ -19,7 +19,7 @@ pipeline {
       stage('Copy and run'){
        steps {
         sh 'cp ./target/*.*ar ./project'
-        sh 'ls /Docker/hw11'
+        sh 'ls /docker/hw11'
        }
       }
     }
