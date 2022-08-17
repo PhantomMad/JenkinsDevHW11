@@ -12,5 +12,4 @@ RUN mkdir -p /docker/hw11/tomcat \
 #
 COPY tomcat.tar.gz /docker/hw11/tomcat
 COPY prod/Dockerfile ${DCONF}/Dockerfile
-RUN chown -R 1000:1000 ${DCONF}
 #
