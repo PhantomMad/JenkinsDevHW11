@@ -8,7 +8,7 @@ RUN apk update --no-cache \
  && apk add --no-cache git openssh wget bash openjdk11 maven docker
 #
 RUN mkdir -p /docker/hw11/tomcat \
- && mkdir /docker/hw11/git
+ && mkdir /docker/hw11/project
 #
 COPY tomcat.tar.gz /docker/hw11/tomcat
 COPY prod/Dockerfile ${DCONF}/Dockerfile
