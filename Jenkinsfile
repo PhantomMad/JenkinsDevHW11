@@ -12,6 +12,11 @@ pipeline {
           sh 'ls -la /docker/hw11/git'
         }
       }
+      stage('Build project'){
+       steps {
+        sh 'mvn -f /docker/hw11/git package'
+       }
+      }
     }
 
 }
