@@ -1,5 +1,5 @@
 ---
-version "3.6"
+version: "3.6"
   serices:
     hw11build:
       image: alpine:hw11_buld
