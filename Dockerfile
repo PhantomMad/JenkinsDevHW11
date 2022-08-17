@@ -11,7 +11,7 @@ RUN mkdir -p /docker/hw11/tomcat \
  && mkdir /docker/hw11/project
 #
 RUN addgroup --gid 117 dsocks \
- && adduser --uid 1000 mudocker \
+ && adduser --uid 1000 --disabled-password mudocker \
  && usermod  -a -G dsocks mudocker
 #
 COPY tomcat.tar.gz /docker/hw11/tomcat
