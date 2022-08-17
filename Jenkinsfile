@@ -17,6 +17,12 @@ pipeline {
         sh 'mvn -f /docker/hw11/git package'
        }
       }
+      stage('Copy and run'){
+       steps {
+        sh 'mkdir /docker/hw11/project'
+        sh 'mv -R target/*.*ar project'
+       }
+      }
     }
 
 }
