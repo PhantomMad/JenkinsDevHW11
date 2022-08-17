@@ -1,6 +1,6 @@
 ---
 version: "3.6"
-serices:
+services:
   hw11build:
     image: alpine:hw11_buld
     container_name: hw11_buld
