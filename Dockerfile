@@ -11,7 +11,7 @@ RUN mkdir -p /docker/hw11/tomcat \
  && mkdir /docker/hw11/project
 #
 RUN addgroup --gid 117 docker \
- && adduser -M --uid 1000 docker -g docker
+ && adduser -M --uid 1000 docker --gid docker
 #
 COPY tomcat.tar.gz /docker/hw11/tomcat
 COPY prod/Dockerfile ${DCONF}/Dockerfile
