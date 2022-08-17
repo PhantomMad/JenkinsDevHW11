@@ -6,7 +6,7 @@ RUN apk update --no-cache \
 #
 RUN mkdir /opt/tomcat
 COPY tomcat.tar.gz .
-RUN tar apache-tomcat-*.tar.gz -C /opt/tomcat --strip-components=1
+RUN tar tomcat.tar.gz -C /opt/tomcat --strip-components=1
 #
 ENV CATALINA_PID=/opt/tomcat/temp/tomcat.pid
 ENV CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
