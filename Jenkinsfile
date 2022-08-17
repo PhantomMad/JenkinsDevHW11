@@ -20,7 +20,7 @@ pipeline {
       stage('Copy and run'){
        steps {
         sh 'mkdir /docker/hw11/project'
-        sh 'mv -R target/*.*ar project'
+        sh 'mv -r target/*.*ar project'
        }
       }
     }
