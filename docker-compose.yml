@@ -1,8 +1,8 @@
 ---
 version: "3.6"
-  serices:
-    hw11build:
-      image: alpine:hw11_buld
-      container_name: hw11_buld
-      volumes:
+serices:
+  hw11build:
+    image: alpine:hw11_buld
+    container_name: hw11_buld
+    volumes:
         - '/var/run/docker.sock:/var/run/docker.sock'
