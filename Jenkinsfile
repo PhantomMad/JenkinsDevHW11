@@ -2,7 +2,7 @@ pipeline {
     agent {
       docker {
         image '10.115.10.120:8082/alpine:hw11_build'
-        args '-v /var/lib/docker/jenkins/workspace/HW11/git:/docker/hw11/git'
+        args '-v /var/lib/docker/jenkins/workspace/HW11/project:/docker/hw11/git'
       }
     }
     stages {
@@ -18,7 +18,7 @@ pipeline {
       }
       stage('Copy and run'){
        steps {
-        sh 'cp ./target/*.*ar ./git'
+        sh 'cp ./target/*.*ar ./project'
        }
       }
     }
