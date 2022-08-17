@@ -9,15 +9,13 @@ pipeline {
       stage('Get content'){
         steps {
           git 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
-          sh 'ls -la'
-        //  sh 'ssh-keyscan -H 10.115.10.120 >> ~/.ssh/known_hosts'
         }
       }
-//      stage('Build project'){
-//       steps {
-///        sh 'mvn -f package'
-//       }
-//      }
+      stage('Build project'){
+       steps {
+        sh 'mvn -f package'
+       }
+      }
 //      stage('Copy and run'){
 //       steps {
 //        sh '''docker build -t 10.115.10.120:8082/alpine:hw11_prod .'''
