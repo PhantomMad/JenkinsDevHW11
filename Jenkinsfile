@@ -1,7 +1,7 @@
 pipeline {
     agent {
       docker {
-        image '10.115.10.120:8082/alpine:hw11_buld'
+        image '10.115.10.120:8082/alpine:hw11_build'
       }
     }
     stages {
