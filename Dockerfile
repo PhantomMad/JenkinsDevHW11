@@ -8,4 +8,4 @@ ENV DOCKER='/var/lib/docker/hw11'
 #
 RUN mkdir -p /var/lib/docker/hw11/git
 COPY prod/Dockerfile /var/lib/docker/hw11/Dockerfile
-CMD ["wget", "-O", "${DOCKER}", "${TOMCAT}"]
+CMD ["wget", "-O", "${DOCKER}", "${TOMCAT}", "/bin/bash"]
