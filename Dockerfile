@@ -5,9 +5,10 @@ ENV DGIT='${DCONF}/git'
 ENV TDISTR='${DCONF}/distr'
 #
 RUN apk update --no-cache \
- && apk add --no-cache git wget bash openjdk11 maven docker docker-compose
+ && apk add --no-cache git wget bash openjdk11 maven docker
 #
 RUN mkdir -p /var/lib/docker/hw11/git
 #
 COPY prod/Dockerfile ${DCONF}/Dockerfile
+#
 CMD ["/bin/bash"]
