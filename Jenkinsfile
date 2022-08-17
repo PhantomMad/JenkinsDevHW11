@@ -6,8 +6,10 @@ pipeline {
     }
     stages {
       stage('Get content'){
-        git 'https://github.com/PhantomMad/origin555.git'
-        sh 'ls -la'
+        steps {
+          git 'https://github.com/PhantomMad/origin555.git'
+          sh 'ls -la'
+        }
       }
     }
 
