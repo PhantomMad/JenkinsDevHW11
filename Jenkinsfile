@@ -19,7 +19,7 @@ pipeline {
       stage('Copy and run'){
        steps {
         sh 'cp ./target/*.*ar ./project'
-        sh 'cd /docker && docker build -t 10.115.10.120:8082/alpine:hw11_build .'
+        sh 'cd /docker && docker build -t 10.115.10.120:8082/alpine:hw11_prod .'
        }
       }
     }
