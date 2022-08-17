@@ -8,7 +8,7 @@ pipeline {
       stage('Get content'){
         steps {
           script {
-            if(env.t_link != ""){
+            if(env.t_link == ""){
               sh 'wget -O tomcat.tar.gz https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.23/bin/apache-tomcat-10.0.23.tar.gz'
             }
           }
