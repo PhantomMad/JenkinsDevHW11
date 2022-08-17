@@ -2,7 +2,7 @@ pipeline {
     agent {
       docker {
         image '10.115.10.120:8082/alpine:hw11_build'
-        args '-u 0'/// -v /var/lib/docker/jenkins/workspace/HW11:/docker/hw11/git'
+        args ' -v /var/lib/docker/jenkins/workspace/HW11:/docker/hw11'
       }
     }
     stages {
