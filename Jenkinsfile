@@ -13,7 +13,7 @@ pipeline {
       }
       stage('Build project'){
        steps {
-        sh 'mvn -f package'
+        sh 'mvn package'
        }
       }
 //      stage('Copy and run'){
