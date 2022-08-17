@@ -9,7 +9,7 @@ pipeline {
         steps {
           sh 'cd /docker/hw11/git'
           sh 'git clone https://github.com/PhantomMad/origin555.git'
-          sh 'ls -la /'
+          sh 'ls -la /docker/hw11/git'
         }
       }
     }
