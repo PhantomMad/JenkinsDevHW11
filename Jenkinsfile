@@ -7,7 +7,7 @@ pipeline {
     stages {
       stage('Get content'){
         steps {
-          sh 'ls -la'
+          sh 'ls -la /'
         }
       }
     }
