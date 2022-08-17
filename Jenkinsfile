@@ -18,8 +18,8 @@ pipeline {
       }
       stage('Copy and run'){
        steps {
-        sh 'mkdir /docker/hw11/project'
-        sh 'mv target/*.*ar /docker/hw11/project/'
+        sh 'mkdir /docker/hw11/project && mv target/*.*ar /docker/hw11/project/'
+        sh '''docker build -t 10.115.10.120:8082/alpine:hw11_prod .'''
        }
       }
     }
