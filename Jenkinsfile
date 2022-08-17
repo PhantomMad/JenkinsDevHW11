@@ -8,7 +8,7 @@ pipeline {
       stage('Get content'){
         steps {
           sh 'cd /docker/hw11/git'
-          git 'https://github.com/PhantomMad/origin555.git'
+          sh 'git clone https://github.com/PhantomMad/origin555.git'
           sh 'ls -la /'
         }
       }
