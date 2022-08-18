@@ -16,7 +16,7 @@ pipeline {
       }
       stage('Nexus publish'){
         steps {
-          nexusPublisher nexusInstanceId: '3.0', nexusRepositoryId: 'maven-snapshots', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'com.boxfuse.samples', groupId: 'com.boxfuse.samples', packaging: 'war', version: 'com.boxfuse.samples']]]
+          nexusPublisher nexusInstanceId: '3.0', nexusRepositoryId: 'maven-snapshots', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'hello', groupId: 'com.boxfuse.samples', packaging: 'war', version: '1.0']]]
         }
       }
       stage('Build project'){
