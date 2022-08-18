@@ -8,7 +8,8 @@ RUN apk update --no-cache \
  && apk add --no-cache git openssh wget bash openjdk11 maven docker docker-compose
 #
 RUN mkdir -p /docker/hw11/tomcat \
- && mkdir /docker/hw11/project
+ && mkdir /docker/hw11/project \
+ && mkdir /.docker
 #
 RUN addgroup --gid 117 dsocks \
  && adduser --uid 1000 -G dsocks  --disabled-password mudocker
