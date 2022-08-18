@@ -3,6 +3,7 @@ pipeline {
       docker {
         image '10.115.10.120:8082/alpine:hw11_build'
         args '-v /var/lib/docker/jenkins/workspace/HW11/project:/docker/hw11/project'
+        args '-v /.docker:/home/jenkins'
       }
     }
     environment {
