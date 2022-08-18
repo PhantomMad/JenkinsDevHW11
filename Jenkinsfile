@@ -29,7 +29,7 @@ pipeline {
        steps {
         sh 'docker image rmi 10.115.10.120:8082/alpine:hw11_build -f'
         sh 'docker image rmi 10.115.10.120:8082/alpine:hw11_prod'
-        sh 'docker image rmi 10.115.10.120:8082/alpine:hw11_local'
+        sh 'docker image rmi 10.115.10.120:8082/alpine:local'
        }
       }
     }
