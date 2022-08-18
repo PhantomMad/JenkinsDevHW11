@@ -9,16 +9,14 @@ pipeline {
       localhub=credentials('Reg-Docker-Manager')
     }
     stages {
-      stage('Nexus publish'){
-        steps {
-          nexusPublisher nexusInstanceId: '3.0', nexusRepositoryId: 'maven-releases', packages: []
-        }
-      }
-    }
-    stages {
       stage('Get content'){
         steps {
           git 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+        }
+      }
+      stage('Nexus publish'){
+        steps {
+          nexusPublisher nexusInstanceId: '3.0', nexusRepositoryId: 'maven-releases', packages: []
         }
       }
       stage('Build project'){
