@@ -19,7 +19,7 @@ pipeline {
         sh 'mvn package'
        }
       }
-      steps('Build prod image'){
+      stage('Build prod image'){
         steps {
          sh 'echo $localhub_PSW | docker login -u $localhub_USR --password-stdin 10.115.10.120:8082'
          sh 'cd /docker && docker build -t 10.115.10.120:8082/alpine:hw11_prod .'
