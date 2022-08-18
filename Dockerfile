@@ -1,20 +1,18 @@
 FROM 10.115.10.120:8082/alpine:local
 #
 ENV DCONF='/docker'
-ENV DGIT='${DCONF}/git'
-ENV TDISTR='${DCONF}/distr'
 #
 RUN apk update --no-cache \
  && apk add --no-cache git openssh wget bash openjdk11 maven docker docker-compose
 #
-RUN mkdir -p /docker/hw11/tomcat \
- && mkdir /docker/hw11/project \
+RUN mkdir -p /docker/tomcat \
+ && mkdir /docker/project \
  && mkdir /.docker
 #
-RUN addgroup --gid 117 dsocks \
- && adduser --uid 1000 -G dsocks  --disabled-password mudocker
+RUN addgroup --gid 117 docsocks \
+ && adduser --uid 1000 -G docsocks  --disabled-password jendock
 #
-COPY tomcat.tar.gz /docker/hw11/tomcat
+COPY tomcat.tar.gz /docker/tomcat
 COPY prod/Dockerfile ${DCONF}/Dockerfile
 CMD ["mvn"]
 #
