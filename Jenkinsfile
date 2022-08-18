@@ -16,7 +16,7 @@ pipeline {
       }
       stage('Nexus publish'){
         steps {
-          nexusPublisher nexusInstanceId: '3.0', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'jenkins-war', groupId: 'org.jenkins-ci.main', packaging: 'war', version: '1.0.0']]]
+          nexusPublisher nexusInstanceId: '3.0', nexusRepositoryId: 'maven-snapshots', packages: []
         }
       }
       stage('Build project'){
