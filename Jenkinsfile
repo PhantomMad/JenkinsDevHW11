@@ -3,7 +3,6 @@ pipeline {
       docker {
         image '10.115.10.120:8082/alpine:hw11_build'
         args '-v /var/lib/docker/jenkins/workspace/HW11/project:/docker/hw11/project'
-        ///args '-v /.docker:/home/jenkins'
       }
     }
     environment {
@@ -24,7 +23,7 @@ pipeline {
        steps {
         sh 'cp ./target/*.*ar ./project'
         sh 'echo $localhub_PSW | docker login -u $localhub_USR --password-stdin 10.115.10.120:8082'
-        ///sh 'cd /docker && docker build -t 10.115.10.120:8082/alpine:hw11_prod .'
+        sh 'cd /docker && docker build -t 10.115.10.120:8082/alpine:hw11_prod .'
        }
       }
     }
