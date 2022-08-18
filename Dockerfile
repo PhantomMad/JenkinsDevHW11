@@ -3,7 +3,7 @@ FROM 10.115.10.120:8082/alpine:local
 ENV DCONF='/docker'
 #
 RUN apk update --no-cache \
- && apk add --no-cache git openssh wget bash openjdk11 maven docker docker-compose
+ && apk add --no-cache git openssh wget bash openjdk11 maven docker
 #
 RUN mkdir -p /docker/tomcat \
  && mkdir /docker/project \
