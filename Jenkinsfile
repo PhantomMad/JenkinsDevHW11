@@ -22,15 +22,15 @@ pipeline {
       stage('Build prod image'){
         steps {
          sh 'echo $localhub_PSW | docker login -u $localhub_USR --password-stdin 10.115.10.120:8082'
-         sh 'cd /docker && docker build -t 10.115.10.120:8082/alpine:hw11_prod .'
+         sh 'cd /docker && docker build -t 10.115.10.120:8082/alpine:hw11_prod . && docker push 10.115.10.120:8082/alpine:hw11_prod'
         }
       }
-//      stage('Copy and run'){
-//       steps {
-//        sh 'cp ./target/*.*ar ./project'
-
-//       }
-//      }
+      stage('Clear images'){
+       steps {
+        sh 'docker image rmi 10.115.10.120:8082/alpine:hw11_build -f'
+        sh 'docker image rmi 10.115.10.120:8082/alpine:hw11_prod'
+        sh 'docker image rmi 10.115.10.120:8082/alpine:hw11_local'
+       }
+      }
     }
-
 }
