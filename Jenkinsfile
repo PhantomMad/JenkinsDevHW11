@@ -5,6 +5,9 @@ pipeline {
         args '-v /var/lib/docker/jenkins/workspace/HW11/project:/docker/hw11/project'
       }
     }
+    environment {
+      localhub=credentials('Reg-Docker-Manager')
+    }
     stages {
       stage('Get content'){
         steps {
@@ -19,7 +22,8 @@ pipeline {
       stage('Copy and run'){
        steps {
         sh 'cp ./target/*.*ar ./project'
-        sh 'cd /docker && docker build -t 10.115.10.120:8082/alpine:hw11_prod .'
+        sh 'echo $localhub_PSW'
+        ///sh 'cd /docker && docker build -t 10.115.10.120:8082/alpine:hw11_prod .'
        }
       }
     }
