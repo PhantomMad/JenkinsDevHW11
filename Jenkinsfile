@@ -16,7 +16,7 @@ pipeline {
       }
       stage('Nexus publish'){
         steps {
-          nexusPublisher nexusInstanceId: '3.0', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/docker/project/hello-1.0.war']], mavenCoordinate: [artifactId: 'hello-1.0', groupId: 'devopsgroup.com', packaging: 'war', version: '1.0.0']]]
+          nexusPublisher nexusInstanceId: '3.0', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'hello-1.0', groupId: 'devopsgroup.com', packaging: 'war', version: '1.0.0']]]
         }
       }
       stage('Build project'){
